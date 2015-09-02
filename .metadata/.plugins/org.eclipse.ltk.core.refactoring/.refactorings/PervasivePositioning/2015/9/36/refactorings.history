@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;navigation&apos; to &apos;pp.navigation&apos;&#x0A;- Original project: &apos;PervasivePositioning&apos;&#x0A;- Original element: &apos;PervasivePositioning/src/navigation&apos;&#x0A;- Renamed element: &apos;PervasivePositioning/src/pp.navigation&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;navigation&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;navigation" name="pp.navigation" qualified="false" references="true" stamp="1441194281074" textual="false" version="1.0"/>
+</session>
