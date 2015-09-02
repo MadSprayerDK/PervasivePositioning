@@ -9,6 +9,8 @@ import org.pi4.locutil.trace.Parser;
 import org.pi4.locutil.trace.TraceEntry;
 
 public class TraceParser {
+	
+	private List<TraceEntry> offlineTrace, onlineTrace;
 
 	public TraceParser()
 	{
@@ -17,11 +19,9 @@ public class TraceParser {
 		//Construct parsers
 		File offlineFile = new File(offlinePath);
 		Parser offlineParser = new Parser(offlineFile);
-		System.out.println("Offline File: " +  offlineFile.getAbsoluteFile());
 		
 		File onlineFile = new File(onlinePath);
 		Parser onlineParser = new Parser(onlineFile);
-		System.out.println("Online File: " + onlineFile.getAbsoluteFile());
 		
 		//Construct trace generator
 		TraceGenerator tg;
@@ -34,18 +34,11 @@ public class TraceParser {
 			tg.generate();
 			
 			//Iterate the trace generated from the offline file
-			List<TraceEntry> offlineTrace = tg.getOffline();			
-			for(TraceEntry entry: offlineTrace) {
-				//Print out coordinates for the collection point and the number of signal strength samples
-				System.out.println(entry.getGeoPosition().toString() + " - " + entry.getSignalStrengthSamples().size());				
-			}
+			offlineTrace = tg.getOffline();			
 			
 			//Iterate the trace generated from the online file
-			List<TraceEntry> onlineTrace = tg.getOnline();			
-			for(TraceEntry entry: onlineTrace) {
-				//Print out coordinates for the collection point and the number of signal strength samples
-				System.out.println(entry.getGeoPosition().toString() + " - " + entry.getSignalStrengthSamples().size());
-			}
+			onlineTrace = tg.getOnline();			
+
 			
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
@@ -53,4 +46,13 @@ public class TraceParser {
 			e.printStackTrace();
 		}
 	}
+	
+	public List<TraceEntry> getOfflineTraces(){
+		return offlineTrace;
+	}
+	
+	public List<TraceEntry> getOnlineTraces(){
+		return onlineTrace;
+	}
+	
 }

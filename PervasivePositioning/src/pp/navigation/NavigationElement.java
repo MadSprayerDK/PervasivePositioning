@@ -14,16 +14,7 @@ public class NavigationElement {
 	public String getName(){
 		return name;
 	}
-	public Object getElement(){
-		try {
-			return element.newInstance();
-		} catch (InstantiationException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return null;
+	public Class<?> getElement(){
+		return element;
 	}
 }
