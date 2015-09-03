@@ -5,10 +5,11 @@ import java.util.Scanner;
 
 import javax.naming.InitialContext;
 
-import pp.collect.TraceParser;
-import pp.navigation.NavigationController;
-import pp.navigation.NavigationElement;
-import pp.test.TestElement;
+import org.pp.collect.TraceParser;
+import org.pp.empirical_fp_nn.EmpiricalController;
+import org.pp.navigation.NavigationController;
+import org.pp.navigation.NavigationElement;
+import org.pp.test.TestElement;
 
 
 public class App {
@@ -17,7 +18,7 @@ public class App {
 		// TODO Auto-generated method stub
 		TraceParser parser = new TraceParser();
 		List<NavigationElement> elements = new ArrayList<>();
-		elements.add(new NavigationElement(TestElement.class, "Trace Parser"));
+		elements.add(new NavigationElement(EmpiricalController.class, "Trace Parser"));
 		NavigationController controller = new NavigationController(elements);
 		System.out.println(controller.returnDefaultWelcomingString());
 		Scanner sc = new Scanner(System.in);

@@ -1,8 +1,8 @@
-package pp.navigation;
+package org.pp.navigation;
 
 import java.util.List;
 
-import pp.collect.TraceParser;
+import org.pp.collect.TraceParser;
 
 public class NavigationController {
 

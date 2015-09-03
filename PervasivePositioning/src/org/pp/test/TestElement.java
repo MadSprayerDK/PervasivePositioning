@@ -1,11 +1,9 @@
-package pp.test;
+package org.pp.test;
 
 import org.pi4.locutil.trace.TraceEntry;
+import org.pp.collect.TraceParser;
 
-import pp.collect.TraceParser;
-import pp.navigation.NavigationElementInterface;
-
-public class TestElement implements NavigationElementInterface{
+public class TestElement{
 
 	public TestElement(TraceParser parser){
 		for(TraceEntry entry: parser.getOnlineTraces()) {
