@@ -3,13 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import javax.naming.InitialContext;
-
 import org.pp.collect.TraceParser;
 import org.pp.empirical_fp_nn.EmpiricalController;
 import org.pp.navigation.NavigationController;
 import org.pp.navigation.NavigationElement;
-import org.pp.test.TestElement;
 
 
 public class App {
@@ -20,7 +17,6 @@ public class App {
 		List<NavigationElement> elements = new ArrayList<>();
 		elements.add(new NavigationElement(EmpiricalController.class, "Trace Parser"));
 		NavigationController controller = new NavigationController(elements);
-		System.out.println(controller.returnDefaultWelcomingString());
 		Scanner sc = new Scanner(System.in);
 		intiateScannerRequest(sc, controller, parser);
 	}
